@@ -1,0 +1,76 @@
+ECG HTML 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECG IT Helpdesk</title>
+    <link rel="stylesheet" href="ECG css.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="card chat-section">
+            <div class="card-header">
+                <h2>ECG IT Helpdesk Assistant</h2>
+                <p>Troubleshoot common IT infrastructure issues instantly.</p>
+            </div>
+            
+            <div id="chat" class="chat-box">
+                <div class="message bot-msg">
+                    <b>Support Bot:</b> Greetings! How may I assist you with your technical issues today?
+                </div>
+            </div>
+            
+            <div id="options" class="options-container"></div>
+        </div>
+
+        <div id="escalateForm" class="card form-section hidden">
+            <div class="card-header">
+                <h3>Escalate Ticket to IT Staff</h3>
+                <p>Please provide additional details to route your request to an on-duty technician.</p>
+            </div>
+            
+            <form id="ticketForm" onsubmit="event.preventDefault(); sendTicket();">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="e.g., John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dept">Department / Office</label>
+                    <input type="text" id="dept" placeholder="e.g., DT 0" required>
+                </div>
+
+                <div class="form-group field-pc hidden">
+                    <label for="pcName">Workstation / PC Name</label>
+                    <select id="pcName">
+                        <option value="">-- Select Workstation ID --</option>
+                        <option value="SOUTH">SOUTH</option>
+                        <option value="EAST">EAST</option>
+                        <option value="MANHYIA">MANHYIA</option>
+                    </select>
+                </div>
+
+                <div class="form-group field-printer hidden">
+                    <label for="printer">Hardware Model</label>
+                    <select id="printer">
+                        <option value="">-- Select Printer Model --</option>
+                        <option value="HP LaserJet Pro M404dn">HP LaserJet Pro M404dn</option>
+                        <option value="EPSON TM-T20II">EPSON TM-T20II</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="issue">Detailed Description of the Issue</label>
+                    <textarea id="issue" placeholder="Please provide specific details or error messages..." rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Ticket via WhatsApp</button>
+            </form>
+            <p id="status" class="status-msg"></p>
+        </div>
+    </div>
+
+    <script src="ECG JS.js"></script>
+</body>
+</html>
