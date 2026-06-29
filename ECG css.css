@@ -1,0 +1,178 @@
+:root {
+    --primary-color: #0056b3;
+    --primary-hover: #004085;
+    /* Changed background color to a translucent overlay so the background image can be seen */
+    --bg-color: rgba(244, 246, 248, 0.85); 
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --text-muted: #666666;
+    --border-color: #e2e8f0;
+    --bot-msg-bg: #f1f5f9;
+    --user-msg-bg: #e0f2fe;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 10px;
+    
+    /* --- BACKGROUND IMAGE SETTINGS --- */
+    background-image: url("ecg.jpg"); /* Replace with your image file name or URL */
+    background-size: cover;                      /* Scales the image to cover the entire screen */
+    background-position: center;                /* Centers the image on the screen */
+    background-repeat: no-repeat;               /* Prevents the image from repeating/tiling */
+    background-attachment: fixed;               /* Keeps the background stationary while scrolling */
+}
+
+.dashboard-container {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    align-items: start;
+}
+
+@media (min-width: 768px) {
+    .dashboard-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.card {
+    /* Changed background to give the cards a slight formal transparency (glassmorphism look) */
+    background: rgba(255, 255, 255, 0.95); 
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow to pop from the background */
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.card-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+}
+
+.card-header h2, .card-header h3 {
+    margin: 0;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.15rem;
+}
+
+.card-header p {
+    margin: 2px 0 0 0;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.chat-box {
+    height: 220px;
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    border-radius: 6px;
+    background: rgba(250, 250, 250, 0.9);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.message {
+    padding: 6px 10px;
+    border-radius: 6px;
+    max-width: 85%;
+    font-size: 13.5px;
+    line-height: 1.3;
+}
+
+.bot-msg {
+    background-color: var(--bot-msg-bg);
+    align-self: flex-start;
+}
+
+.user-msg {
+    background-color: var(--user-msg-bg);
+    align-self: flex-end;
+}
+
+.options-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.btn {
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background: #f0f7ff;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 13.5px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+textarea {
+    resize: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.status-msg {
+    margin-top: 8px;
+    font-size: 12.5px;
+    text-align: center;
+}
+
+.success {
+    color: #16a34a;
+}
